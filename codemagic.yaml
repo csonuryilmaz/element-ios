@@ -5,7 +5,6 @@ workflows:
     scripts:
       - name: say hello
         script: echo "Hello Codemagician!"
-    scripts: 
       - name: Cocoapods Install
         script: |
           set -e # exit on first failed command
@@ -14,6 +13,5 @@ workflows:
           pod _1.11.2_ setup
           pod _1.11.2_ repo update
           pod _1.11.2_ install
-    scripts:
       - name: Xcodebuild for iOS Simulator
         script: xcodebuild -scheme "RiotSwiftUI" -configuration "Debug"  COMPILER_INDEX_STORE_ENABLE=NO  ONLY_ACTIVE_ARCH=NO  -arch x86_64 -quiet -workspace "Riot.xcworkspace"
